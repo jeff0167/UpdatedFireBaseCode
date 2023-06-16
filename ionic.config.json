@@ -1,0 +1,7 @@
+{
+  "name": "UpdatedFireBaseCode",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
