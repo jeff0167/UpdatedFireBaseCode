@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Update Pirate</ion-title>
+    <ion-buttons slot="start">
+      <ion-button color="dark" (click)="cancel()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button style="visibility: hidden;"><ion-icon slot="icon-only"
+          name="arrow-back-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="1"></ion-col>
+      <ion-col size="10">
+        <form [formGroup]="updateForm" (submit)="updatePirate()">
+          <h1>Update category: {{originalPirate.Name}}</h1>
+          <h2>Name</h2>
+          <ion-card class="typingBox">
+            <ion-textarea label="Write pirate name" labelPlacement="floating" [counter]="true" maxlength="50"
+              [counterFormatter]="customCounterFormatter" formControlName="Name" [(ngModel)]="originalPirate.Name"></ion-textarea>
+          </ion-card>
+          <h2>Age</h2>
+          <ion-card class="typingBox">
+            <ion-input label="Assign their age" labelPlacement="floating" formControlName="Age" [(ngModel)]="originalPirate.Age"></ion-input>
+          </ion-card>
+  
+          <h2>Pirate Crew</h2>
+          <ion-card class="typingBox">
+            <ion-textarea label="Write their pirate crew" labelPlacement="floating" [counter]="true" maxlength="50"
+              [counterFormatter]="customCounterFormatter" formControlName="PirateCrew" [(ngModel)]="originalPirate.PirateCrew"></ion-textarea>
+          </ion-card>
+  
+          <ion-button type="submit" class="centered-div-bottom"><ion-icon
+            name="save"></ion-icon></ion-button>
+        </form>
+      </ion-col>
+      <ion-col size="1"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
