@@ -11,18 +11,33 @@
   </ion-toolbar>
 </ion-header>
 
-<h1>Pirates</h1>
+<h1>Pirates Fire base</h1>
     <ion-list>
    
       <ion-item text-center *ngFor="let pirate of pirates">
         <ion-thumbnail slot="start">
           <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </ion-thumbnail>
-        <ion-text slot="start">{{pirate.Name}}</ion-text>
-        <ion-card-subtitle slot="start">Age: {{pirate.Age}}</ion-card-subtitle>
-        <ion-text slot="start">The pirate crew: The {{pirate.PirateCrew}}</ion-text>
+        <ion-text slot="start">{{pirate.name}}</ion-text>
+        <ion-card-subtitle slot="start">Age: {{pirate.age}}</ion-card-subtitle>
+        <ion-text slot="start">The pirate crew: The {{pirate.pirateCrew}}</ion-text>
         <ion-icon color="warning" class="edit" slot="end" (click)="presentEditPirateModal(pirate)" name="create-outline"></ion-icon>
         <ion-icon color="danger" class="trash" slot="end" (click)="presentDeletePopover(pirate)"name="trash-outline"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <h1>Pirates MySQL</h1>
+    <ion-list>
+   
+      <ion-item text-center *ngFor="let pirate of piratesAPI">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-text slot="start">{{pirate.name}}</ion-text>
+        <ion-card-subtitle slot="start">Age: {{pirate.age}}</ion-card-subtitle>
+        <ion-text slot="start">The pirate crew: The {{pirate.pirateCrew}}</ion-text>
+        <ion-icon color="warning" class="edit" slot="end" (click)="presentEditPirateModal(pirate)" name="create-outline"></ion-icon>
+        <ion-icon color="danger" class="trash" slot="end" (click)="presentDeletePopover(pirate, false)"name="trash-outline"></ion-icon>
       </ion-item>
     </ion-list>
 
@@ -34,17 +49,17 @@
         <h2>Name</h2>
         <ion-card class="typingBox">
           <ion-textarea label="Write pirate name" labelPlacement="floating" [counter]="true" maxlength="50"
-            [counterFormatter]="customCounterFormatter" formControlName="Name"></ion-textarea>
+            [counterFormatter]="customCounterFormatter" formControlName="name"></ion-textarea>
         </ion-card>
         <h2>Age</h2>
         <ion-card class="typingBox">
-          <ion-input label="Assign their age" labelPlacement="floating" formControlName="Age"></ion-input>
+          <ion-input label="Assign their age" labelPlacement="floating" formControlName="age"></ion-input>
         </ion-card>
 
         <h2>Pirate Crew</h2>
         <ion-card class="typingBox">
           <ion-textarea label="Write their pirate crew" labelPlacement="floating" [counter]="true" maxlength="50"
-            [counterFormatter]="customCounterFormatter" formControlName="PirateCrew"></ion-textarea>
+            [counterFormatter]="customCounterFormatter" formControlName="pirateCrew"></ion-textarea>
         </ion-card>
 
         <ion-button type="submit" class="centered-div-bottom"><ion-icon

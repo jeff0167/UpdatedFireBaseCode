@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, inject } from '@angular/core';
 import { Pirate } from '../../interfaces/pirate';
-import { PirateService } from '../../services/pirate-service.service';
+import { PirateFBService } from '../../services/pirate-FBService.service';
 import { IonicModule, ModalController, ToastController } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -21,14 +21,14 @@ export class EditPirateComponent  implements OnInit {
 
   toastController: ToastController = inject(ToastController);
 
-  constructor(private formBuilder: FormBuilder, private pirateService: PirateService, private modalController: ModalController) { 
+  constructor(private formBuilder: FormBuilder, private pirateService: PirateFBService, private modalController: ModalController) { 
   }
 
   ngOnInit(){
     this.updateForm = this.formBuilder.group({
-      Name: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]],
-      Age: ['', [Validators.required, Validators.min(1), Validators.max(900)]],
-      PirateCrew: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]]
+      name: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]],
+      age: ['', [Validators.required, Validators.min(1), Validators.max(900)]],
+      pirateCrew: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]]
     });
 
     this.originalPirate = this.pirate;

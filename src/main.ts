@@ -9,7 +9,7 @@ import { environment } from './environments/environment';
 
 import { provideHttpClient } from '@angular/common/http'; 
 
-import { provideFirebaseApp, getApp, initializeApp } from "@angular/fire/app"
+import { provideFirebaseApp, initializeApp } from "@angular/fire/app"
 import { getFirestore, provideFirestore } from "@angular/fire/firestore"; 
 
 if (environment.production) {

@@ -5,7 +5,7 @@ import { Pirate } from '../interfaces/pirate';
 @Injectable({
   providedIn: 'root'
 })
-export class PirateService {
+export class PirateFBService {
 
   collectionName: string = 'Pirate';
 
@@ -17,13 +17,13 @@ export class PirateService {
   }
 
   addPirate(pirate: Pirate) {
-    let data = {Name: pirate.Name, Age: pirate.Age, PirateCrew: pirate.PirateCrew};
+    let data = {name: pirate.name, age: pirate.age, pirateCrew: pirate.pirateCrew};
     let pirateCollection = collection(this.fs, this.collectionName);
     return addDoc(pirateCollection, data);
   }
 
   updatePirate(_id: string, pirate: Pirate){
-    let data = {id: _id, Name: pirate.Name, Age: pirate.Age, PirateCrew: pirate.PirateCrew};
+    let data = {name: pirate.name, age: pirate.age, pirateCrew: pirate.pirateCrew};
     let docRef=doc(this.fs, this.collectionName + "/" + _id);
     return updateDoc(docRef, data); 
   }

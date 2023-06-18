@@ -18,21 +18,21 @@
       <ion-col size="1"></ion-col>
       <ion-col size="10">
         <form [formGroup]="updateForm" (submit)="updatePirate()">
-          <h1>Update category: {{originalPirate.Name}}</h1>
+          <h1>Update Pirate: {{originalPirate.name}}</h1>
           <h2>Name</h2>
           <ion-card class="typingBox">
             <ion-textarea label="Write pirate name" labelPlacement="floating" [counter]="true" maxlength="50"
-              [counterFormatter]="customCounterFormatter" formControlName="Name" [(ngModel)]="originalPirate.Name"></ion-textarea>
+              [counterFormatter]="customCounterFormatter" formControlName="name" [(ngModel)]="originalPirate.name"></ion-textarea>
           </ion-card>
           <h2>Age</h2>
           <ion-card class="typingBox">
-            <ion-input label="Assign their age" labelPlacement="floating" formControlName="Age" [(ngModel)]="originalPirate.Age"></ion-input>
+            <ion-input label="Assign their age" labelPlacement="floating" formControlName="age" [(ngModel)]="originalPirate.age"></ion-input>
           </ion-card>
   
           <h2>Pirate Crew</h2>
           <ion-card class="typingBox">
             <ion-textarea label="Write their pirate crew" labelPlacement="floating" [counter]="true" maxlength="50"
-              [counterFormatter]="customCounterFormatter" formControlName="PirateCrew" [(ngModel)]="originalPirate.PirateCrew"></ion-textarea>
+              [counterFormatter]="customCounterFormatter" formControlName="pirateCrew" [(ngModel)]="originalPirate.pirateCrew"></ion-textarea>
           </ion-card>
   
           <ion-button type="submit" class="centered-div-bottom"><ion-icon

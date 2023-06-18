@@ -1,6 +1,7 @@
 export interface Pirate{
     id: string;
-    Name: string;
-    Age: number;
-    PirateCrew: string;
+    pirate_id: number;
+    name: string;
+    age: number;
+    pirateCrew: string;
   }
