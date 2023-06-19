@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
+//import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver'; // npm i localforage-cordovasqlitedriver
 import { Storage } from '@ionic/storage-angular';
-import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver'; // npm i localforage-cordovasqlitedriver
 
 const STORAGE_KEY = 'pirates';
 
@@ -12,8 +12,7 @@ export class LocalStorageService {
   constructor(private storage: Storage) { }
 
   async init(){
-    await this.storage['defineDriver'](CordovaSQLiteDriver);
-    await this.storage['create']();
+    this.storage.create();
   }
 
   getAllPirates() {

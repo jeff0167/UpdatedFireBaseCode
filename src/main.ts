@@ -12,10 +12,11 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideFirebaseApp, initializeApp } from "@angular/fire/app"
 import { getFirestore, provideFirestore } from "@angular/fire/firestore"; 
 
-import { IonicStorageModule } from '@ionic/storage-angular'; // npm install @ionic/storage-angular
+//import { IonicStorageModule } from '@ionic/storage-angular'; // npm install @ionic/storage-angular
+//import { Storage } from '@ionic/storage-angular';
 
-import { Drivers } from '@ionic/storage';
-import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver'; // npm i localforage-cordovasqlitedriver
+//import { Drivers } from '@ionic/storage';
+//import * as CordovaSQLiteDriver from 'localforage-cordovasqlitedriver'; // npm i localforage-cordovasqlitedriver
 
 if (environment.production) {
   enableProdMode();
@@ -24,7 +25,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    importProvidersFrom(IonicModule.forRoot({}), provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    importProvidersFrom(IonicModule.forRoot({}), provideFirebaseApp(() => initializeApp(environment.firebaseConfig)), // IonicStorageModule.forRoot({name: "myionicdatabase"})
     provideFirestore(() => getFirestore())),
     provideRouter(routes),
     provideHttpClient()

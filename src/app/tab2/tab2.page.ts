@@ -5,7 +5,7 @@ import { EditPirateComponent } from '../components/edit-pirate/edit-pirate.compo
 import { Pirate } from '../interfaces/pirate';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { LocalStorageService } from '../services/local-storage.service';
+//import { LocalStorageService } from '../services/local-storage.service';
 import { PopUpComponent } from '../components/pop-up/pop-up.component';
 
 @Component({
