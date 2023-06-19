@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Pirate } from '../interfaces/pirate';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 const baseUrl = 'http://localhost:8080/api/pirates';
@@ -16,8 +16,8 @@ export class PirateMySQLService {
     return this.http.get<Pirate[]>(baseUrl);
   }
 
-  getAllByUserId(id: number){
-    return this.http.get<Pirate[]>(baseUrl + "?userid=" + id);
+  getByPirateId(id: number){
+    return this.http.get<Pirate[]>(baseUrl + "/" + id);
   }
 
   get(id: number): Observable<Pirate> {

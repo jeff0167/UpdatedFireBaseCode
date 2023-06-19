@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, inject} from '@angular/core';
 import { IonicModule, ModalController, PopoverController } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { PirateFBService } from '../services/pirate-FBService.service';
@@ -8,13 +8,14 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } 
 import { EditPirateComponent } from '../components/edit-pirate/edit-pirate.component';
 import { PopUpComponent } from '../components/pop-up/pop-up.component';
 import { PirateMySQLService } from '../services/pirate-MySQLservice.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, RouterModule, ReactiveFormsModule],
+  imports: [IonicModule, CommonModule, FormsModule, RouterModule, ReactiveFormsModule]
 })
 export class Tab1Page implements OnInit {
 
@@ -22,20 +23,26 @@ export class Tab1Page implements OnInit {
   piratesAPI!: any[];
   createForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, public popoverController: PopoverController, private pirateAPIService: PirateMySQLService, private pirateService: PirateFBService, private modalController: ModalController){
+  pirateService = inject(PirateFBService);
+  pirateAPIService = inject(PirateMySQLService);
+
+  constructor(private formBuilder: FormBuilder, public popoverController: PopoverController, private modalController: ModalController){
     this.getPiratesFB();
     this.getPiratesMySQL();
   }
 
   getPiratesFB(){
-    this.pirateService.getPirates().subscribe((res) =>{
-      this.pirates = res as Pirate[];
+    this.pirateService.getPirates().subscribe((data) =>{
+      console.log(data);
+      this.pirates = _.sortBy(data as Pirate[], "name", "age");
+      console.log(this.pirates);
     });
   }
 
   async getPiratesMySQL(): Promise<void> { // it doesn't display all of them
     this.pirateAPIService.getAll().subscribe((data: any) => {
-        this.piratesAPI = data;
+        console.log(data);
+        this.piratesAPI = _.sortBy(data, "pirateCrew", "age");
         console.log(this.piratesAPI);
     });
   }
@@ -53,7 +60,7 @@ export class Tab1Page implements OnInit {
   }
 
   async presentEditPirateModal(_pirate: Pirate) { // still a bunch of code just to use a object/component
-    console.log("present");
+    //console.log("present");
     const modal = await this.modalController.create({  // we create a modal from the existing modal Component class so to say, you could switch out the component to create
       component: EditPirateComponent,
       componentProps: { pirate: _pirate } 

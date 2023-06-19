@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Matches
+      Local
     </ion-title>
     <ion-buttons slot="end">
       <ion-button routerLink="../../">
@@ -13,4 +13,46 @@
 
 <ion-content [fullscreen]="true">
 
+<!-- <h1>Pirates local</h1>
+    <ion-list>
+      <ion-item text-center *ngFor="let pirate of pirates">
+        <ion-thumbnail slot="start">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+        <ion-text slot="start">{{pirate.name}}</ion-text>
+        <ion-card-subtitle slot="start">Age: {{pirate.age}}</ion-card-subtitle>
+        <ion-text slot="start">The pirate crew: The {{pirate.pirateCrew}}</ion-text>
+        <ion-icon color="warning" class="edit" slot="end" (click)="presentEditPirateModal(pirate)" name="create-outline"></ion-icon>
+        <ion-icon color="danger" class="trash" slot="end" (click)="presentDeletePopover(pirate)"name="trash-outline"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="1"></ion-col>
+    <ion-col size="10">
+      <form [formGroup]="createForm" (submit)="addPirate()">
+        <h2>Name</h2>
+        <ion-card class="typingBox">
+          <ion-textarea label="Write pirate name" labelPlacement="floating" [counter]="true" maxlength="50"
+            [counterFormatter]="customCounterFormatter" formControlName="name"></ion-textarea>
+        </ion-card>
+        <h2>Age</h2>
+        <ion-card class="typingBox">
+          <ion-input label="Assign their age" labelPlacement="floating" formControlName="age"></ion-input>
+        </ion-card>
+
+        <h2>Pirate Crew</h2>
+        <ion-card class="typingBox">
+          <ion-textarea label="Write their pirate crew" labelPlacement="floating" [counter]="true" maxlength="50"
+            [counterFormatter]="customCounterFormatter" formControlName="pirateCrew"></ion-textarea>
+        </ion-card>
+
+        <ion-button type="submit" class="centered-div-bottom"><ion-icon
+          name="save"></ion-icon></ion-button>
+      </form>
+    </ion-col>
+    <ion-col size="1"></ion-col>
+  </ion-row>
+</ion-grid> -->
 </ion-content>

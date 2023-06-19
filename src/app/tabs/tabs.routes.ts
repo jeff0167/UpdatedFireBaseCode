@@ -18,13 +18,15 @@ export const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/tab2',
+        redirectTo: '/tabs/tab1',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    loadComponent: () => import('../tab1/tab1.page').then((m) => m.Tab1Page),
+    redirectTo: '/tabs/tab1',
+    pathMatch: 'full',
   },
+
 ];
