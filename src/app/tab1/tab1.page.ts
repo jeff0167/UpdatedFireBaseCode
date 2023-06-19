@@ -49,9 +49,9 @@ export class Tab1Page implements OnInit {
 
   ngOnInit(){
     this.createForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]],
-      age: ['', [Validators.required, Validators.min(1), Validators.max(900)]],
-      pirateCrew: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(50)]]
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      age: ['', [Validators.required, Validators.min(2), Validators.max(900)]], // Validators.pattern("\d{2}")
+      pirateCrew: ['', [Validators.required, Validators.pattern("^[A-Za-z]{2,10}$")]] 
     });
   }
 
