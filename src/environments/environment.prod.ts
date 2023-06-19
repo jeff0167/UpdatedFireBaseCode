@@ -1,12 +1,13 @@
 export const environment = {
-  firebase: {
-    projectId: 'wannago-d0a61',
-    appId: '1:77391034894:web:4a02a33de38024ee265a5f',
-    storageBucket: 'wannago-d0a61.appspot.com',
-    apiKey: 'AIzaSyCzaCbZUccWfalldCt2NMIehTBaCmpyzao',
-    authDomain: 'wannago-d0a61.firebaseapp.com',
-    messagingSenderId: '77391034894',
-    measurementId: 'G-WHKF10DS0L',
+  firebaseConfig: {
+    apiKey: "AIzaSyAQjfnJCrRQPN1_GKiJKSURH6zq0CIWpkk",
+    authDomain: "pirateworld-cda38.firebaseapp.com",
+    projectId: "pirateworld-cda38",
+    storageBucket: "pirateworld-cda38.appspot.com",
+    messagingSenderId: "232586841257",
+    measurementId: "G-LLHZ1SWD1F",
+    appId: "1:232586841257:web:f8fed5370e50a4ae0b6db8"
   },
   production: true
+  
 };

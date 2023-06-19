@@ -50,6 +50,7 @@
     "@angular/compiler-cli": "^16.0.0",
     "@angular/language-service": "^16.0.0",
     "@capacitor/cli": "5.0.5",
+    "@compodoc/compodoc": "^1.1.21",
     "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~4.3.0",
     "@types/lodash": "^4.14.195",
